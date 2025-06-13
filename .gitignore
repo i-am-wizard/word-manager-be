@@ -1,0 +1,47 @@
+# Java build artifacts
+*.class
+target/
+bin/
+build/
+
+# Logs
+*.log
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment and secrets
+.env
+*.env
+
+# Gradle
+.gradle/
+!gradle-wrapper.jar
+
+# Maven
+.mvn/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# Test reports
+test-output/
+jacoco*.exec
+coverage/
+
+# Spring Boot devtools restart cache
+.spring-boot-devtools.properties
+.spring-boot-devtools-restart/
+

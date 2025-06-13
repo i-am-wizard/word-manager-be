@@ -1,0 +1,1 @@
+CREATE TABLE word (id BIGINT PRIMARY KEY, word VARCHAR(255)); INSERT INTO word (id, word) VALUES (1, 'World');
