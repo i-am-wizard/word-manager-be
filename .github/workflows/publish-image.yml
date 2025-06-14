@@ -26,6 +26,6 @@ jobs:
       - name: Build and push Docker image
         run: |
           IMAGE=ghcr.io/your-username/word-manager-backend:1.0.0-${{ github.run_number }}
-          docker build -t $IMAGE -f backend/Dockerfile .
+          docker build -t $IMAGE -f Dockerfile .
           docker push $IMAGE
 
