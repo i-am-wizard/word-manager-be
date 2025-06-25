@@ -4,7 +4,7 @@ on:
   push:
 
 env:
-  REGISTRY_IMAGE: ${{ github.repository_owner }}/word-manager-backend 
+  REGISTRY_IMAGE: ghcr.io/${{ github.repository_owner }}/word-manager-backend 
 
 jobs:
   build-and-push:
@@ -49,7 +49,7 @@ jobs:
         with:
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ghcr.io/${{ env.REGISTRY_IMAGE }}
+          tags: ${{ env.REGISTRY_IMAGE }}
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true
 
       - name: Export digest
@@ -68,6 +68,9 @@ jobs:
 
   merge:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     needs:
       - build-and-push
     steps:
