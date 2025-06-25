@@ -4,7 +4,7 @@ on:
   push:
 
 env:
-  REGISTRY_IMAGE: ${{ github.repository_owner }}/word-manager-backend:1.0.0-${{ github.run_number }}  
+  REGISTRY_IMAGE: ${{ github.repository_owner }}/word-manager-backend 
 
 jobs:
   build-and-push:
