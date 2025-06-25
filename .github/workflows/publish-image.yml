@@ -4,7 +4,8 @@ on:
   push:
 
 env:
-  REGISTRY_IMAGE: ghcr.io/${{ github.repository_owner }}/word-manager-backend 
+  REGISTRY_IMAGE: ghcr.io/${{ github.repository_owner }}/word-manager-backend
+  SEMVER: 1.0.0
 
 jobs:
   build-and-push:
@@ -96,7 +97,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY_IMAGE }}
-          tags: type=raw,value=${{ github.run_number }}
+          tags: type=raw,value=${{ env.SEMVER }}-${{ github.run_number }}
 
       - name: Create manifest list and push
         working-directory: ${{ runner.temp }}/digests
