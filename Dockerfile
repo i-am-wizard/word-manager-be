@@ -1,4 +1,4 @@
-FROM gradle:8.0-jdk17 as builder
+FROM gradle:8.14.2-jdk17 as builder
 COPY --chown=gradle:gradle backend /home/gradle/project
 WORKDIR /home/gradle/project
 RUN gradle build --no-daemon
