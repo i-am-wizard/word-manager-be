@@ -3,6 +3,6 @@ COPY --chown=gradle:gradle backend /home/gradle/project
 WORKDIR /home/gradle/project
 RUN gradle build --no-daemon
 
-FROM openjdk:17-jdk-slim
+FROM amazoncorretto:17-alpine
 COPY --from=builder /home/gradle/project/build/libs/*.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
